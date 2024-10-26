@@ -91,7 +91,7 @@ const Styledbutton = styled.button`
 `;
 
 export default function Main({ setCartItem, setCount }) {
-  const images = ["Boutique/image/bg1.jpg", "Boutique/image/bg2.jpg", "Boutique/image/bg3.jpg"];
+  const images = ["/image/bg1.jpg", "/image/bg2.jpg", "Boutique/image/bg3.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
