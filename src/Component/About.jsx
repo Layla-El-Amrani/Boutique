@@ -7,7 +7,7 @@ const StyledSlider = styled.div`
   background-color: black;
   text-align: center;
   font-size: 20px;
-  background-image: url('/image/4.jpg');
+  background-image: url('Boutique/image/4.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
 
