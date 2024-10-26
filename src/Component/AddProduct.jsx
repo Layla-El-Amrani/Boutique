@@ -64,21 +64,46 @@ const ImagePreview = styled.img`
   margin-top: 10px;
 `;
 
+const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Checkbox = styled.input`
+  margin-right: 10px;
+`;
+
 export default function AddProduct({ onAddProduct }) {
-  const [product, setProduct] = useState({ name: '', price: '', img: null });
+  const [product, setProduct] = useState({
+    name: '',
+    price: '',
+    img: null,
+    isAvailable: true, // Propriété pour le statut de disponibilité
+  });
   const [imagePreview, setImagePreview] = useState(null);
   const navigate = useNavigate();
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
-    setProduct({ ...product, [name]: value });
+    const { name, type, checked, value } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+    
+    setProduct((prevProduct) => ({
+      ...prevProduct,
+      [name]: newValue,
+    }));
+
+    // Log pour vérifier le changement de l'état
+    console.log(`${name}: ${newValue}`);
   };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     if (file) {
-      setProduct({ ...product, img: file });
-      setImagePreview(URL.createObjectURL(file)); // Crée un aperçu de l'image
+      setProduct((prevProduct) => ({
+        ...prevProduct,
+        img: file,
+      }));
+      setImagePreview(URL.createObjectURL(file));
     }
   };
 
@@ -88,9 +113,16 @@ export default function AddProduct({ onAddProduct }) {
     formData.append('name', product.name);
     formData.append('price', product.price);
     formData.append('img', product.img);
-    
-    onAddProduct(formData); 
-    navigate('/product'); 
+    formData.append('isAvailable', product.isAvailable); // Ajout du statut
+
+    console.log('Form Data:', {
+      name: product.name,
+      price: product.price,
+      isAvailable: product.isAvailable,
+    });
+
+    onAddProduct(formData); // Assurez-vous que cette fonction fonctionne
+    navigate('/product');
   };
 
   return (
@@ -109,9 +141,20 @@ export default function AddProduct({ onAddProduct }) {
           <Label>Image :</Label>
           <Input type="file" name="img" accept="image/*" onChange={handleImageChange} required />
         </FormGroup>
-      
+        <FormGroup>
+          <CheckboxContainer>
+            <Checkbox 
+              type="checkbox" 
+              name="isAvailable" 
+              checked={product.isAvailable} 
+              onChange={handleChange} 
+            />
+            <Label>Produit disponible</Label>
+          </CheckboxContainer>
+        </FormGroup>
         <Button type="submit">Ajouter le produit</Button>
       </form>
+      {imagePreview && <ImagePreview src={imagePreview} alt="Aperçu" />}
     </FormContainer>
   );
 }

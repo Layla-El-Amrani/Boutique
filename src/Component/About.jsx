@@ -96,7 +96,7 @@ export default function About() {
       </StyledSlider>
       
       <ContentWrapper>
-        <Image src="/image/4.jpg" alt="About Us" />
+        <Image src="Boutique/image/4.jpg" alt="About Us" />
         <div>
           <Styledh1>About Us</Styledh1>
           <StyledParagraph>

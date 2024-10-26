@@ -8,7 +8,7 @@ const StyledButton = styled.button`
   background-color: green;
   margin-top: 10px;
   color: white;
-  margin-left:50px;
+  margin-left: 50px;
 `;
 
 const StyleDiv = styled.div`
@@ -62,6 +62,7 @@ export default function Product({ products }) {
               <StyledTh>ID</StyledTh>
               <StyledTh>Nom</StyledTh>
               <StyledTh>Prix</StyledTh>
+              <StyledTh>Statut</StyledTh> {/* Nouvelle colonne pour le statut */}
             </tr>
           </thead>
           <tbody>
@@ -73,6 +74,7 @@ export default function Product({ products }) {
                 <StyledTd>{product.id}</StyledTd>
                 <StyledTd>{product.name}</StyledTd>
                 <StyledTd>{product.price}</StyledTd>
+                <StyledTd>{product.isAvailable ? 'Indisponible' : 'Disponible'}</StyledTd>
               </tr>
             ))}
           </tbody>
