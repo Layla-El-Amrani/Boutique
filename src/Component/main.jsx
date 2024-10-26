@@ -91,7 +91,7 @@ const Styledbutton = styled.button`
 `;
 
 export default function Main({ setCartItem, setCount }) {
-  const images = ["/image/bg1.jpg", "/image/bg2.jpg", "/image/bg3.jpg"];
+  const images = ["Boutique/image/bg1.jpg", "Boutique/image/bg2.jpg", "Boutique/image/bg3.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   useEffect(() => {
@@ -109,14 +109,14 @@ export default function Main({ setCartItem, setCount }) {
 
   const products = [
     { id: 1, name: "Montre Classique", price: "$150.00", img: "Boutique/image/4.jpg" },
-    { id: 2, name: "Montre Sportive", price: "$200.00", img: "/image/1.avif" },
-    { id: 3, name: "Montre de Luxe", price: "$800.00", img: "/image/5.jpg" },
-    { id: 4, name: "Montre Étanche", price: "$120.00", img: "/image/2.avif" },
-    { id: 5, name: "Montre Minimaliste", price: "$100.00", img: "/image/4.avif" },
-    { id: 6, name: "Montre Connectée", price: "$250.00", img: "/image/4.jpeg" },
-    { id: 7, name: "Montre en Bois", price: "$130.00", img: "/image/4.jpg" },
-    { id: 8, name: "Montre Automatique", price: "$500.00", img: "/image/5.jpg" },
-    { id: 9, name: "Montre Vintage", price: "$300.00", img: "/image/6.jpg" },
+    { id: 2, name: "Montre Sportive", price: "$200.00", img: "Boutique/image/1.avif" },
+    { id: 3, name: "Montre de Luxe", price: "$800.00", img: "Boutique/image/5.jpg" },
+    { id: 4, name: "Montre Étanche", price: "$120.00", img: "Boutique/image/2.avif" },
+    { id: 5, name: "Montre Minimaliste", price: "$100.00", img: "Boutique/image/4.avif" },
+    { id: 6, name: "Montre Connectée", price: "$250.00", img: "Boutique/image/4.jpeg" },
+    { id: 7, name: "Montre en Bois", price: "$130.00", img: "Boutique/image/4.jpg" },
+    { id: 8, name: "Montre Automatique", price: "$500.00", img: "Boutique/image/5.jpg" },
+    { id: 9, name: "Montre Vintage", price: "$300.00", img: "Boutique/image/6.jpg" },
   ];
 
   return (
