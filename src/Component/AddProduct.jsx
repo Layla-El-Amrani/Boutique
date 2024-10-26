@@ -78,7 +78,7 @@ export default function AddProduct({ onAddProduct }) {
     const file = e.target.files[0];
     if (file) {
       setProduct({ ...product, img: file });
-      setImagePreview(URL.createObjectURL(file));
+      setImagePreview(URL.createObjectURL(file)); // Crée un aperçu de l'image
     }
   };
 
