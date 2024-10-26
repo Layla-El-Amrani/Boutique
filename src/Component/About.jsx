@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from "styled-components";
-import Slider from "react-slick";
 
 const StyledSlider = styled.div`
   color: white;
@@ -8,8 +7,8 @@ const StyledSlider = styled.div`
   background-color: black;
   text-align: center;
   font-size: 20px;
-  background-image: url('/image/4.jpg');
-  background-size: cover;
+  background-image: url('Boutique/image/4.jpg');
+  background-size: 100% 100%;
   background-repeat: no-repeat;
 
   @media (max-width: 768px) {
@@ -90,14 +89,6 @@ const Footer = styled.footer`
 `;
 
 export default function About() {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
   return (
     <div>
       <StyledSlider>
@@ -105,19 +96,7 @@ export default function About() {
       </StyledSlider>
       
       <ContentWrapper>
-        <div style={{ flex: 1 }}>
-          <Slider {...settings}>
-            <div>
-              <Image src="Boutique/image/1.jpg" alt="Slide 1" />
-            </div>
-            <div>
-              <Image src="Boutique/image/2.jpg" alt="Slide 2" />
-            </div>
-            <div>
-              <Image src="Boutique/image/3.jpg" alt="Slide 3" />
-            </div>
-          </Slider>
-        </div>
+        <Image src="Boutique/image/4.jpg" alt="About Us" />
         <div>
           <Styledh1>About Us</Styledh1>
           <StyledParagraph>
